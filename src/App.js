@@ -7,14 +7,15 @@ import Technology from "./pages/technology/Technology";
 import Nav from "./shared/nav/Nav";
 
 function App() {
+
 	return (
 		<div>
 			<Nav />
 
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route path="/" element={<Home/>} />
 				<Route path="destination" element={<Destination />} />
-				<Route path="crew" element={<Crew />} />
+				<Route path="crew" element={<Crew  />} />
 				<Route path="technology" element={<Technology />} />
 			</Routes>
 		</div>
