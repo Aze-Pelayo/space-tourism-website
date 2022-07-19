@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { GlobalStyle } from "./shared/styled-components/GlobalStyle.styled";
 import Crew from "./pages/crew/Crew";
 import Home from "./pages/home/Home";
 import Destination from "./pages/destination/Destination";
@@ -9,7 +10,9 @@ import Nav from "./shared/nav/Nav";
 function App() {
 
 	return (
+	
 		<div>
+			<GlobalStyle/>
 			<Nav />
 
 			<Routes>
