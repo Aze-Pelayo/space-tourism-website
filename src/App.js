@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { GlobalStyle } from "./shared/styled-components/GlobalStyle.styled";
 import Crew from "./pages/crew/Crew";
 import Home from "./pages/home/Home";
@@ -8,11 +8,11 @@ import Technology from "./pages/technology/Technology";
 import Nav from "./shared/nav/Nav";
 
 function App() {
-
-	return (
+	const location = useLocation();
 	
-		<div>
-			<GlobalStyle/>
+	return (
+		<>
+			<GlobalStyle path = {location.pathname}/>
 			<Nav />
 
 			<Routes>
@@ -21,7 +21,7 @@ function App() {
 				<Route path="crew" element={<Crew  />} />
 				<Route path="technology" element={<Technology />} />
 			</Routes>
-		</div>
+		</>
 	);
 }
 

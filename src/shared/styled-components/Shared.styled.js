@@ -10,13 +10,14 @@ export const colors = {
 
 // Text
 export const Heading1 = styled.h1`
-    font: lighter 150px "Bellefair", serif;
+    display: inline-block;
+    font: lighter 80px "Bellefair", serif;
     color: ${colors.white};
     text-transform: uppercase;
     margin: 0;
 
-    @media screen and (max-width:480px) {
-        font-size: 80px;
+    @media screen and (min-width:501px) {
+        font-size: 150px;
     }
 `
 
@@ -40,24 +41,34 @@ export const Heading4 = styled.h4`
 `
 
 export const Heading5 = styled.h5`
-    font: lighter 28px 'Barlow Condensed', sans-serif;
+    font: lighter 16px 'Barlow Condensed', sans-serif;
     color: ${colors.lavender};
     letter-spacing: 4.75px;
     text-transform: uppercase;
 
-    @media screen and (max-width:480px) {
-        font-size: 16px;
+    @media screen and (min-width:501px) {
+        font-size: 20px;
+    }
+
+    @media screen and (min-width:1024px) {
+        font-size: 28px;
     }
 `
 
 export const BodyText = styled.p`
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Barlow', sans-serif;
-    line-height: 32px;
+    line-height: 25px;
     color: ${colors.lavender};
 
-    @media screen and (max-width:480px) {
-        font-size: 15px;
+    @media screen and (min-width:501px) {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    @media screen and (min-width:1024px) {
+        font-size: 18px;
+        line-height: 32px;
     }
 `;
 
@@ -82,11 +93,14 @@ export const NavText = styled.li`
 `
 
 // Containers
-
 export const Container = styled.div`
     height: 100%;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+`
+
+export const TextContainer = styled.div`
+    @media screen and (min-width: 501px) {
+        width: 500px;
+        margin: auto;
+    }
 `

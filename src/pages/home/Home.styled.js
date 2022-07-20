@@ -3,15 +3,17 @@ import { Link } from "react-router-dom";
 import {Container, colors} from "../../shared/styled-components/Shared.styled"
 
 export const HomeContainer = styled(Container)`
-    @media screen and (max-width: 480px) {
-        padding: 1em;
-        background: url('../../img/home/background-home-mobile.jpg') no-repeat center center/cover;
-        text-align: center;
+    padding: 1em;
+    text-align: center;
+
+    @media screen and (min-width: 501px) {
+
     };
 
-    ${'' /* background-image:  url(${({ orientation }) => 
-
-    }); */}
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        text-align: left;
+    };
 `
 
 export const LandingMainButton = styled(Link)`
@@ -31,5 +33,13 @@ export const LandingMainButton = styled(Link)`
     &:hover, &:focus, &:active {
         box-shadow: 0 0 0 1.5em ${colors.shadow};
         transition: 0.2s
+    }
+
+    @media screen and (min-width: 501px) {
+        font-size: 32px;
+    }
+
+    @media screen and (min-width:1024px) {
+        ${'' /* position: relative; */}
     }
 `
