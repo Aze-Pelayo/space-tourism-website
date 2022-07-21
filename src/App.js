@@ -5,7 +5,7 @@ import Crew from "./pages/crew/Crew";
 import Home from "./pages/home/Home";
 import Destination from "./pages/destination/Destination";
 import Technology from "./pages/technology/Technology";
-import Nav from "./shared/nav/Nav";
+import Header from "./shared/header/Header";
 
 function App() {
 	const location = useLocation();
@@ -13,7 +13,7 @@ function App() {
 	return (
 		<>
 			<GlobalStyle path = {location.pathname}/>
-			<Nav />
+			<Header />
 
 			<Routes>
 				<Route path="/" element={<Home/>} />

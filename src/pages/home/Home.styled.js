@@ -4,15 +4,23 @@ import {Container, colors} from "../../shared/styled-components/Shared.styled"
 
 export const HomeContainer = styled(Container)`
     padding: 1em;
+    margin: 2em 0;
     text-align: center;
 
-    @media screen and (min-width: 501px) {
-
+    @media screen and (min-width: 769px) {
+        margin: 4em 0;
     };
 
     @media screen and (min-width: 1024px) {
         display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
         text-align: left;
+        margin: 0;
+        padding: 0 5em;
+        position: absolute;
+        bottom: 10%;
+        height: 50vh;
     };
 `
 
@@ -27,7 +35,7 @@ export const LandingMainButton = styled(Link)`
     text-transform: uppercase;
     position: absolute;
     left: 50%;
-    bottom: 10%;
+    bottom: 7%;
     transform: translateX(-50%);
 
     &:hover, &:focus, &:active {
@@ -35,11 +43,12 @@ export const LandingMainButton = styled(Link)`
         transition: 0.2s
     }
 
-    @media screen and (min-width: 501px) {
+    @media screen and (min-width: 769px) {
         font-size: 32px;
     }
 
     @media screen and (min-width:1024px) {
-        ${'' /* position: relative; */}
+        position: static;
+        margin-bottom: 1em;
     }
 `
