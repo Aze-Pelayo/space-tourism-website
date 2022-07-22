@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled, {css} from "styled-components";
 
 // Colors
 export const colors = {
@@ -7,6 +6,7 @@ export const colors = {
     white: "#FFFFFF",
     lavender: "#D0D6F9",
     shadow: "rgba(151,151,151, 0.5)",
+    darkGrey: "#383B4B"
 };
 
 // Text
@@ -54,6 +54,8 @@ export const Heading5 = styled.h5`
     }
 
     @media screen and (min-width: 769px) {
+        margin: 2em 3em;
+        text-align: left;
         font-size: 20px;
     }
 
@@ -84,21 +86,22 @@ export const Subheading1 = styled.p`
     font-size: 28px;
     font-family: "Bellefair", serif;
     color: ${colors.white};
+    text-transform: uppercase;
+    margin-top: 0;
 `;
 
 export const Subheading2 = styled.p`
     font-size: 14px;
     font-family: "Barlow Condensed", sans-serif;
-    color: ${colors.white};
+    color: ${colors.lavender};
     letter-spacing: 2.35px;
+    text-transform: uppercase;
 `;
 
-export const NavText = styled(NavLink)`
+export const nav = css`
     display: block;
-    margin: 2em 0;
     font-size: 16px;
     font-family: "Barlow Condensed", sans-serif;
-    color: ${colors.white};
     letter-spacing: 2.67px;
     text-decoration: none;
     text-transform: uppercase;
@@ -108,29 +111,6 @@ export const NavText = styled(NavLink)`
         font-weight: 700;
     }
 
-    @media screen and (min-width: 769px) {
-        margin: 0;
-        padding: 2.3em 0;
-        border-bottom: 5px solid rgba(100, 100, 100, 0);
-        span {
-            display: none;
-        }
-
-        &:hover,
-        &:focus {
-            border-bottom-color: rgba(100, 100, 100, 0.5);
-        }
-
-        &.active {
-            border-bottom: 5px solid ${colors.white};
-        }
-    }
-
-    @media screen and (min-width: 1024px) {
-        span {
-            display: inline;
-        }
-    }
 `;
 
 // Containers

@@ -1,17 +1,16 @@
 import styled from "styled-components";
+import { colors, nav } from "../styled-components/Shared.styled";
+import { NavLink } from "react-router-dom";
 
 export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1.5em;
+    padding: 1.5em;
 
     @media screen and (min-width: 769px) {
         margin: 0 0 0 2em;
-    }
-
-    @media screen and (min-width: 1024px) {
-        margin: 2em 0 0 2.5em;
+        padding-right: 0;
     }
 `;
 
@@ -73,5 +72,34 @@ export const LinkContainer = styled.div`
         height: 6em;
         padding: 0 8vw;
         width: 60vw;
+    }
+`;
+
+export const NavText = styled(NavLink)`
+    ${nav};
+    color: ${colors.white};
+    margin: 2em 0;
+    @media screen and (min-width: 769px) {
+        margin: 0;
+        padding: 2.3em 0;
+        border-bottom: 5px solid rgba(100, 100, 100, 0);
+        span {
+            display: none;
+        }
+
+        &:hover,
+        &:focus {
+            border-bottom-color: rgba(100, 100, 100, 0.5);
+        }
+
+        &.active {
+            border-bottom: 5px solid ${colors.white};
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        span {
+            display: inline;
+        }
     }
 `;

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { HeaderContainer, LogoContainer, BurgerContainer, LinkContainer } from "./Header.styled";
-import { NavText } from "../styled-components/Shared.styled";
+import { HeaderContainer, LogoContainer, BurgerContainer, LinkContainer, NavText } from "./Header.styled";
 
 function Header() {
     const [openNav, setOpenNav] = useState(false);
