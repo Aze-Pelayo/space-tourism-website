@@ -1,65 +1,87 @@
 import React, { useState, useEffect } from "react";
 import data from "../../shared/json/data.json";
+import {
+    Heading5,
+    Heading1,
+    BodyText,
+    Subheading1,
+    Subheading2,
+} from "../../shared/styled-components/Shared.styled";
+import {
+	LabelText,
+    DestinationDetailsContainer,
+    PlanetImage,
+    DestinationContainer,
+    DestinationOptionsContainer,
+    DestinationStatsContainer,
+	Divider
+} from "./Destination.styled";
 
 function Destination() {
-	const [selectedOption, setSelectedOption] = useState("Moon");
-	const [destination, setDestination] = useState(data.destinations[0]);
+    const [selectedOption, setSelectedOption] = useState("Moon");
+    const [destination, setDestination] = useState(data.destinations[0]);
 
-	const handleSelectedOption = (event) => {
-		setSelectedOption(event.target.value);
-	};
+    const handleSelectedOption = (event) => {
+        setSelectedOption(event.target.value);
+    };
 
-	const handleDestination = (selectedOption) => {
-		setDestination(() => {
-			return data.destinations.find((item) => item.name === selectedOption);
-		});
-	};
+    const handleDestination = (selectedOption) => {
+        setDestination(() => {
+            return data.destinations.find((item) => item.name === selectedOption);
+        });
+    };
 
-	useEffect(() => {
-		handleDestination(selectedOption);
-	}, [selectedOption]);
+    useEffect(() => {
+        handleDestination(selectedOption);
+    }, [selectedOption]);
 
-	return (
-		<>
-			<h5>
-				<span>01</span>Pick Your Destination
-			</h5>
+    return (
+        <>
+            <Heading5>
+                <span>01</span>Pick Your Destination
+            </Heading5>
 
-			<div>
-				{data.destinations.map((item, key) => {
-					return (
-						<div key={key}>
-							<input
-								type="radio"
-								value={item.name}
-								checked={selectedOption === item.name}
-								onChange={handleSelectedOption}
-								id={item.name}
-							/>
+            <DestinationContainer>
+                <PlanetImage src={destination.images.webp} alt={destination.name} />
 
-							<label htmlFor={item.name}>{item.name}</label>
-						</div>
-					);
-				})}
-			</div>
+                <DestinationDetailsContainer>
+                    <DestinationOptionsContainer>
+                        {data.destinations.map((item, key) => {
+                            return (
+                                <div key={key}>
+                                    <input
+                                        type='radio'
+                                        value={item.name}
+                                        checked={selectedOption === item.name}
+                                        onChange={handleSelectedOption}
+                                        id={item.name}
+                                    />
 
-			<div>
-                <img src = {destination.images.png} alt ={destination.name}/>
-				<h1>{selectedOption}</h1> 
-				<p>{destination.description}</p>
-				<div>
-					<div>
-						<h5>Avg. Distance</h5>
-						<h4>{destination.distance}</h4>
-					</div>
-					<div>
-						<h5>Est. Travel Time</h5>
-						<h4>{destination.travel}</h4>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+                                    <LabelText htmlFor={item.name} selected = {selectedOption}>{item.name}</LabelText>
+                                </div>
+                            );
+                        })}
+                    </DestinationOptionsContainer>
+
+                    <Heading1>{selectedOption}</Heading1>
+                    <BodyText>{destination.description}</BodyText>
+                    
+					<Divider />
+                    
+					<DestinationStatsContainer>
+                        <>
+                            <Subheading2>Avg. Distance</Subheading2>
+                            <Subheading1>{destination.distance}</Subheading1>
+                        </>
+                        <>
+                            <Subheading2>Est. Travel Time</Subheading2>
+                            <Subheading1>{destination.travel}</Subheading1>
+                        </>
+                    </DestinationStatsContainer>
+                </DestinationDetailsContainer>
+            </DestinationContainer>
+        </>
+    );
 }
 
 export default Destination;
