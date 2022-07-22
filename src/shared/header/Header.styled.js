@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
     align-items: center;
     padding: 1.5em;
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         margin: 0 0 0 2em;
         padding-right: 0;
     }
@@ -21,7 +21,7 @@ export const LogoContainer = styled.div`
     z-index: 3;
     padding: 0.2em;
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         height: 3em;
         width: 3em;
     }
@@ -41,7 +41,7 @@ export const BurgerContainer = styled.button`
     border: none;
     position: relative;
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         display: none;
     }
 `;
@@ -63,7 +63,7 @@ export const LinkContainer = styled.div`
     transition: right 0.6s ease;
     backdrop-filter: blur(81.5485px);
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -79,7 +79,7 @@ export const NavText = styled(NavLink)`
     ${nav};
     color: ${colors.white};
     margin: 2em 0;
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         margin: 0;
         padding: 2.3em 0;
         border-bottom: 5px solid rgba(100, 100, 100, 0);

@@ -7,7 +7,7 @@ export const HomeContainer = styled(Container)`
     margin: 2em 0;
     text-align: center;
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         margin: 4em 0;
     };
 
@@ -43,7 +43,7 @@ export const LandingMainButton = styled(Link)`
         transition: 0.2s
     }
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         font-size: 32px;
     }
 

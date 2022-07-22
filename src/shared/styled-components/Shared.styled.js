@@ -17,7 +17,7 @@ export const Heading1 = styled.h1`
     text-transform: uppercase;
     margin: 0;
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 1024px) {
         font-size: 150px;
     }
 `;
@@ -53,8 +53,7 @@ export const Heading5 = styled.h5`
         opacity: 0.4;
     }
 
-    @media screen and (min-width: 769px) {
-        margin: 2em 3em;
+    @media screen and (min-width: 768px) {
         text-align: left;
         font-size: 20px;
     }
@@ -71,7 +70,7 @@ export const BodyText = styled.p`
     line-height: 25px;
     color: ${colors.lavender};
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         font-size: 16px;
         line-height: 28px;
     }
@@ -120,7 +119,7 @@ export const Container = styled.div`
 `;
 
 export const TextContainer = styled.div`
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
         width: 500px;
         margin: auto;
     };

@@ -12,6 +12,7 @@ import {
     DestinationDetailsContainer,
     PlanetImage,
     DestinationContainer,
+	DestinationContentContainer,
     DestinationOptionsContainer,
     DestinationStatsContainer,
 	Divider
@@ -36,12 +37,12 @@ function Destination() {
     }, [selectedOption]);
 
     return (
-        <>
+        <DestinationContainer>
             <Heading5>
                 <span>01</span>Pick Your Destination
             </Heading5>
 
-            <DestinationContainer>
+            <DestinationContentContainer>
                 <PlanetImage src={destination.images.webp} alt={destination.name} />
 
                 <DestinationDetailsContainer>
@@ -69,18 +70,18 @@ function Destination() {
 					<Divider />
                     
 					<DestinationStatsContainer>
-                        <>
+                        <div>
                             <Subheading2>Avg. Distance</Subheading2>
                             <Subheading1>{destination.distance}</Subheading1>
-                        </>
-                        <>
+                        </div>
+                        <div>
                             <Subheading2>Est. Travel Time</Subheading2>
                             <Subheading1>{destination.travel}</Subheading1>
-                        </>
+                        </div>
                     </DestinationStatsContainer>
                 </DestinationDetailsContainer>
-            </DestinationContainer>
-        </>
+            </DestinationContentContainer>
+        </DestinationContainer>
     );
 }
 
