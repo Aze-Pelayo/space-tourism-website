@@ -8,13 +8,23 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html {
+        height: 100%;
+    }
+    
     body {
-        padding: 0;
         margin: 0;
-        height: 100vh;
+        padding: 0;
+        height: 100%;
+    }
+
+    #root {
+        position: relative;
+        width: 100%;
+        min-height: 100%;
         background: ${({path}) => {
             if (path === "/") {
-                return `url('../../img/home/background-home-mobile.jpg') no-repeat center center/cover;`
+                return `url('../../img/home/background-home-mobile.jpg') fixed no-repeat center center/cover;`
             }
             else {
                 path = path.substring(1);
