@@ -1,13 +1,13 @@
 import React from "react";
-import { Heading1, Heading5, BodyText, TextContainer } from "../../shared/styled-components/Shared.styled";
-import { HomeContainer, LandingMainButton } from "./Home.styled";
+import { Heading1, BodyText, TextContainer } from "../../shared/styled-components/Shared.styled";
+import { HomeContainer, LandingMainButton, Heading5Home } from "./Home.styled";
 
 function Home() {
 
 	return (
 		<HomeContainer>
 			<TextContainer>
-				<Heading5>So you want to travel to</Heading5>
+				<Heading5Home>So you want to travel to</Heading5Home>
 				<Heading1>Space</Heading1>
 				<BodyText>
 					Let’s face it; if you want to go to space, you might as well genuinely go to

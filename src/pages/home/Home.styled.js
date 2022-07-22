@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import {Container, colors} from "../../shared/styled-components/Shared.styled"
+import {Container, colors, Heading5} from "../../shared/styled-components/Shared.styled"
 
 export const HomeContainer = styled(Container)`
     padding: 1em;
@@ -51,4 +51,8 @@ export const LandingMainButton = styled(Link)`
         position: static;
         margin-bottom: 1em;
     }
+`
+
+export const Heading5Home = styled(Heading5)`
+    color: ${colors.lavender};
 `

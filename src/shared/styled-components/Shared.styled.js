@@ -42,15 +42,23 @@ export const Heading4 = styled.h4`
 
 export const Heading5 = styled.h5`
     font: lighter 16px "Barlow Condensed", sans-serif;
-    color: ${colors.lavender};
+    color: ${colors.white};
     letter-spacing: 4.75px;
     text-transform: uppercase;
+    text-align: center;
+
+    span {
+        margin-right: 1em;
+        font-weight: 700;
+        opacity: 0.4;
+    }
 
     @media screen and (min-width: 769px) {
         font-size: 20px;
     }
 
     @media screen and (min-width: 1024px) {
+        text-align: left;
         font-size: 28px;
     }
 `;
