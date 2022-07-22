@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from "react";
 import data from "../../shared/json/data.json";
+import { Heading5, Heading2, BodyText, Subheading1, Subheading2 } from "../../shared/styled-components/Shared.styled";
 import {
-    Heading5,
-    Heading1,
-    BodyText,
-    Subheading1,
-    Subheading2,
-} from "../../shared/styled-components/Shared.styled";
-import {
-	LabelText,
-    DestinationDetailsContainer,
+    LabelText,
     PlanetImage,
     DestinationContainer,
-	DestinationContentContainer,
+    DestinationTextContainer,
+    SubheadingDistance,
+    SubheadingTime,
     DestinationOptionsContainer,
-    DestinationStatsContainer,
-	Divider
+    Divider,
 } from "./Destination.styled";
 
 function Destination() {
@@ -42,45 +36,43 @@ function Destination() {
                 <span>01</span>Pick Your Destination
             </Heading5>
 
-            <DestinationContentContainer>
-                <PlanetImage src={destination.images.webp} alt={destination.name} />
+            <PlanetImage src={destination.images.webp} alt={destination.name} />
 
-                <DestinationDetailsContainer>
-                    <DestinationOptionsContainer>
-                        {data.destinations.map((item, key) => {
-                            return (
-                                <div key={key}>
-                                    <input
-                                        type='radio'
-                                        value={item.name}
-                                        checked={selectedOption === item.name}
-                                        onChange={handleSelectedOption}
-                                        id={item.name}
-                                    />
+            <DestinationOptionsContainer>
+                {data.destinations.map((item, key) => {
+                    return (
+                        <div key={key}>
+                            <input
+                                type='radio'
+                                value={item.name}
+                                checked={selectedOption === item.name}
+                                onChange={handleSelectedOption}
+                                id={item.name}
+                            />
 
-                                    <LabelText htmlFor={item.name} selected = {selectedOption}>{item.name}</LabelText>
-                                </div>
-                            );
-                        })}
-                    </DestinationOptionsContainer>
-
-                    <Heading1>{selectedOption}</Heading1>
-                    <BodyText>{destination.description}</BodyText>
-                    
-					<Divider />
-                    
-					<DestinationStatsContainer>
-                        <div>
-                            <Subheading2>Avg. Distance</Subheading2>
-                            <Subheading1>{destination.distance}</Subheading1>
+                            <LabelText htmlFor={item.name} selected={selectedOption}>
+                                {item.name}
+                            </LabelText>
                         </div>
-                        <div>
-                            <Subheading2>Est. Travel Time</Subheading2>
-                            <Subheading1>{destination.travel}</Subheading1>
-                        </div>
-                    </DestinationStatsContainer>
-                </DestinationDetailsContainer>
-            </DestinationContentContainer>
+                    );
+                })}
+            </DestinationOptionsContainer>
+
+            <DestinationTextContainer>
+                <Heading2>{selectedOption}</Heading2>
+                <BodyText>{destination.description}</BodyText>
+                <Divider />
+            </DestinationTextContainer>
+
+            <SubheadingDistance>
+                <Subheading2>Avg. Distance</Subheading2>
+                <Subheading1>{destination.distance}</Subheading1>
+            </SubheadingDistance>
+
+            <SubheadingTime>
+                <Subheading2>Est. Travel Time</Subheading2>
+                <Subheading1>{destination.travel}</Subheading1>
+            </SubheadingTime>
         </DestinationContainer>
     );
 }

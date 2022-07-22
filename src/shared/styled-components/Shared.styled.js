@@ -23,9 +23,18 @@ export const Heading1 = styled.h1`
 `;
 
 export const Heading2 = styled.h2`
-    font: lighter 100px "Bellefair", serif;
+    font: lighter 56px "Bellefair", serif;
     color: ${colors.white};
     text-transform: uppercase;
+    margin: 0;
+
+    @media screen and (min-width: 768px) {
+        font-size: 80px;
+    };
+
+    @media screen and (min-width: 1024px) {
+        font-size: 100px;
+    };
 `;
 
 export const Heading3 = styled.h3`
@@ -46,6 +55,7 @@ export const Heading5 = styled.h5`
     letter-spacing: 4.75px;
     text-transform: uppercase;
     text-align: center;
+    grid-area: Heading5;
 
     span {
         margin-right: 1em;
@@ -54,7 +64,7 @@ export const Heading5 = styled.h5`
     }
 
     @media screen and (min-width: 768px) {
-        text-align: left;
+        justify-self: start;
         font-size: 20px;
     }
 
@@ -69,6 +79,7 @@ export const BodyText = styled.p`
     font-family: "Barlow", sans-serif;
     line-height: 25px;
     color: ${colors.lavender};
+    grid-area: BodyText;
 
     @media screen and (min-width: 768px) {
         font-size: 16px;
@@ -86,7 +97,7 @@ export const Subheading1 = styled.p`
     font-family: "Bellefair", serif;
     color: ${colors.white};
     text-transform: uppercase;
-    margin-top: 0;
+    margin: 0.5em 0;
 `;
 
 export const Subheading2 = styled.p`
