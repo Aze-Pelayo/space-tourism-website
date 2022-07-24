@@ -38,15 +38,34 @@ export const Heading2 = styled.h2`
 `;
 
 export const Heading3 = styled.h3`
-    font: lighter 56px "Bellefair", serif;
+    font: lighter 24px "Bellefair", serif;
     color: ${colors.white};
     text-transform: uppercase;
+    margin: 0;
+
+    @media screen and (min-width: 768px) {
+        font-size: 40px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        font-size: 56px;
+    }
 `;
 
 export const Heading4 = styled.h4`
-    font: lighter 32px "Bellefair", serif;
+    font: lighter 16px "Bellefair", serif;
     color: ${colors.white};
+    opacity: 0.5;
     text-transform: uppercase;
+    margin-top: 0;
+
+    @media screen and (min-width: 768px) {
+        font-size: 24px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        font-size: 32px;
+    }
 `;
 
 export const Heading5 = styled.h5`
