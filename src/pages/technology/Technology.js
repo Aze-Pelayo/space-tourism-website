@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import data from "../../shared/json/data.json";
 import { Heading5, Subheading3, Heading3, BodyText } from "../../shared/styled-components/Shared.styled";
-import { TechnologyContainer, TechnologyImage, TechnologyRadioButtons, TechnologyDetails } from "./Technology.styled";
+import {
+    TechnologyContainer,
+    TechnologyImage,
+    TechnologyRadioButtons,
+    TechnologyDetails,
+    LabelText,
+} from "./Technology.styled";
 
 function Technology() {
     const checkWindowSize = () => {
@@ -56,6 +62,10 @@ function Technology() {
                                 onChange={handleSelectedOption}
                                 id={item.name}
                             />
+
+                            <LabelText htmlFor={item.name} selected={selectedOption}>
+                                {key + 1}
+                            </LabelText>
                         </div>
                     );
                 })}
