@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 // Colors
 export const colors = {
@@ -6,7 +6,7 @@ export const colors = {
     white: "#FFFFFF",
     lavender: "#D0D6F9",
     shadow: "rgba(151,151,151, 0.5)",
-    darkGrey: "#383B4B"
+    darkGrey: "#383B4B",
 };
 
 // Text
@@ -30,11 +30,11 @@ export const Heading2 = styled.h2`
 
     @media screen and (min-width: 768px) {
         font-size: 80px;
-    };
+    }
 
     @media screen and (min-width: 1024px) {
         font-size: 100px;
-    };
+    }
 `;
 
 export const Heading3 = styled.h3`
@@ -127,6 +127,18 @@ export const Subheading2 = styled.p`
     text-transform: uppercase;
 `;
 
+export const Subheading3 = styled.p`
+    font-size: 14px;
+    font-family: "Barlow Condensed", sans-serif;
+    color: ${colors.lavender};
+    letter-spacing: 2.35px;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+        font-size: 16px;
+    }
+`;
+
 export const nav = css`
     display: block;
     font-size: 16px;
@@ -139,7 +151,6 @@ export const nav = css`
         margin-right: 1em;
         font-weight: 700;
     }
-
 `;
 
 // Containers
@@ -152,7 +163,7 @@ export const TextContainer = styled.div`
     @media screen and (min-width: 768px) {
         width: 500px;
         margin: auto;
-    };
+    }
 
     @media screen and (min-width: 1024px) {
         margin: 0;

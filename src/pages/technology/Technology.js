@@ -1,14 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import data from "../../shared/json/data.json";
+import { Heading5, Subheading3, Heading3, BodyText } from "../../shared/styled-components/Shared.styled";
+import { TechnologyContainer, TechnologyImage, TechnologyRadioButtons, TechnologyDetails } from "./Technology.styled";
 
 function Technology() {
     const checkWindowSize = () => {
-        return window.innerHeight > window.innerWidth ? 'portrait' : 'landscape';
-    }
+        return window.innerHeight > window.innerWidth ? "portrait" : "landscape";
+    };
 
     const [selectedOption, setSelectedOption] = useState("Launch vehicle");
     const [technology, setTechnology] = useState(data.technology[0]);
-    const [screenOrientation, setScreenOrientation] = useState(checkWindowSize())
+    const [screenOrientation, setScreenOrientation] = useState(checkWindowSize());
 
     const handleSelectedOption = (event) => {
         setSelectedOption(event.target.value);
@@ -17,10 +19,8 @@ function Technology() {
     const handleTechnology = (selectedOption) => {
         setTechnology(() => {
             return data.technology.find((item) => item.name === selectedOption);
-        })
+        });
     };
-
-
 
     useEffect(() => {
         handleTechnology(selectedOption);
@@ -28,45 +28,46 @@ function Technology() {
 
     useEffect(() => {
         const handleScreenResize = () => {
-            setScreenOrientation(checkWindowSize())
-        }
-        window.addEventListener('resize', handleScreenResize);
-        return () => window.removeEventListener('resize', handleScreenResize)
-    },[])
+            setScreenOrientation(checkWindowSize());
+        };
+        window.addEventListener("resize", handleScreenResize);
+        return () => window.removeEventListener("resize", handleScreenResize);
+    }, []);
     return (
-        <>
-			<h5>
-				<span>03</span>Space Launch 101
-			</h5>
+        <TechnologyContainer>
+            <Heading5>
+                <span>03</span>Space Launch 101
+            </Heading5>
 
-			<div>
-				{data.technology.map((item, key) => {
-					return (
-						<div key={key}>
-							<input
-								type="radio"
-								value={item.name}
-								checked={selectedOption === item.name}
-								onChange={handleSelectedOption}
-								id={item.name}
-							/>
-						</div>
-					);
-				})}
-			</div>
+            {screenOrientation === "portrait" ? (
+                <TechnologyImage src={technology.images.landscape} alt={technology.name} />
+            ) : (
+                <TechnologyImage src={technology.images.portrait} alt={technology.name} />
+            )}
 
-			<div>
-                {screenOrientation === 'portrait' ?
-                    <img src = {technology.images.portrait} alt ={technology.name}/> :
-                    <img src = {technology.images.landscape} alt ={technology.name}/>
-                }
-                <h5>The Technology...</h5>
-				<h1>{selectedOption}</h1> 
-				<p>{technology.description}</p>
+            <TechnologyRadioButtons>
+                {data.technology.map((item, key) => {
+                    return (
+                        <div key={key}>
+                            <input
+                                type='radio'
+                                value={item.name}
+                                checked={selectedOption === item.name}
+                                onChange={handleSelectedOption}
+                                id={item.name}
+                            />
+                        </div>
+                    );
+                })}
+            </TechnologyRadioButtons>
 
-			</div>
-		</>
-    )
+            <TechnologyDetails>
+                <Subheading3>The Technology...</Subheading3>
+                <Heading3>{selectedOption}</Heading3>
+                <BodyText>{technology.description}</BodyText>
+            </TechnologyDetails>
+        </TechnologyContainer>
+    );
 }
 
 export default Technology;
